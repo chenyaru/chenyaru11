@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*闭包:通俗的说就是一个封闭的包，作用：函数内部的变量被外部使用或调用*/
+        /*全局变量和局部变量*/
+      /*  var q = 999;
+
+        function f1() {
+            console.log(q)
+        }
+        f1(); //999*/
+
+        //局部
+       /* function f2() {
+            var n = 000;
+        }
+        console.log(n)*/
+
+            //闭包
+        /*function f1() {　　　　
+            var n = 999;　　　
+            function f2() {　　　　　　
+                alert(n);　　　　
+            }　　
+            return f2; //返回f1对象的子对象f2
+        }　　
+        var result = f1();　　
+        result(); // 999
+*/
+
+        function a() {
+            var i = 0;
+
+            function b() {
+                alert(++i);
+            }
+            return b;
+        }
+        var c = a();
+        c();
+        c();
+        /*闭包的缺点：由于闭包会使函数的变量被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页性能问题*/
+
+        /*闭包应用:在js中，闭包的应用最多的就是jquery插件开发；
+        插件开发用到闭包；(function($){})(jQuery)
+        好处：不依赖全局变量，不会受到第三方插件的影响
+        */
+    </script>
+</body>
+
+</html>
